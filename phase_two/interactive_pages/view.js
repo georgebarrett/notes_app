@@ -6,9 +6,9 @@ class View {
     }
 
     addParagraph() {
-        const newParapraph = document.createElement('p');
-        newParapraph.innerText = 'BARBICAN';
-        this.mainContainerEl.append(newParapraph);
+        const newParagraph = document.createElement('p');
+        newParagraph.innerText = 'BARBICAN';
+        this.mainContainerEl.append(newParagraph);
     }
   }
   
