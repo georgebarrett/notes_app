@@ -25,4 +25,6 @@
   var View = require_view();
   var view = new View();
   view.addParagraph();
+  view.addParagraph();
+  view.addParagraph();
 })();
