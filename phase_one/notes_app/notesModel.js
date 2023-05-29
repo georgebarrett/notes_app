@@ -11,6 +11,10 @@ class NotesModel {
     addNote(title) {
         this.notes.push(title);
     }
+
+    deleteNotes() {
+        this.notes = []
+    }
 }
 
 module.exports = NotesModel

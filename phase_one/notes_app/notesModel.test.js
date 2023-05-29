@@ -13,6 +13,15 @@ describe('NotesModel', () => {
 
         notes.addNote('buy floss')
         expect(notes.getNotes()).toEqual(['buy floss']);
+    });
+
+    it('removes the notes from the this.notes array', () => {
+        const notes = new NotesModel();
+
+        notes.addNote('buy floss');
+        notes.addNote('see Taro')
+        notes.deleteNotes();
+        expect(notes.getNotes()).toEqual([]);
     })
 
 })
