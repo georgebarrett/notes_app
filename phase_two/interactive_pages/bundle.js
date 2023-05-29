@@ -13,7 +13,7 @@
         }
         addParagraph() {
           const newParagraph = document.createElement("p");
-          newParagraph.innerText = "BARBICAN";
+          newParagraph.innerText = "Rival Consoles";
           this.mainContainerEl.append(newParagraph);
         }
       };
