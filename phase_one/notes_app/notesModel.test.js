@@ -8,4 +8,11 @@ describe('NotesModel', () => {
         expect(notes.getNotes()).toEqual([]); 
     });
 
+    it('adds a note to the notes array', () => {
+        const notes = new NotesModel();
+
+        notes.addNote('buy floss')
+        expect(notes.getNotes()).toEqual(['buy floss']);
+    })
+
 })
