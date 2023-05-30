@@ -13,4 +13,16 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(2);
   });
+
+  it('adds three paragraphs', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const view = new View();
+
+    view.addParagraph();
+    view.addParagraph();
+    view.addParagraph();
+
+    expect(document.querySelectorAll('p').length).toBe(5);
+  })
 });
