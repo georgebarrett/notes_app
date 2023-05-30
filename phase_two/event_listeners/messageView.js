@@ -1,9 +1,13 @@
 class MessageView {
     constructor() {
       this.buttonEl = document.querySelector('#show-message-button');
+      this.hideButtonEl = document.querySelector('#hide-message-button');
   
       this.buttonEl.addEventListener('click', () => {
-         this.displayMessage();
+        this.displayMessage();
+      });
+      this.hideButtonEl.addEventListener('click', () => {
+        this.hideMessage();
       });
     }
   
@@ -14,6 +18,11 @@ class MessageView {
       messageElement.innerText = 'Breaking news!';
 
       document.querySelector('#main-container').append(messageElement);
+    }
+
+    hideMessage() {
+      let message = document.querySelector('#message');
+      message.remove();
     }
   }
   
