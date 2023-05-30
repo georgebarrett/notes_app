@@ -15,12 +15,11 @@ describe('page view', () => {
     it('displays all of the notes', () => {
         document.body.innerHTML = fs.readFileSync('./index.html');
         const notesModel = new NotesModel();
+        const display = new NotesView(notesModel);
 
         notesModel.addNote();
         notesModel.addNote('cut hair');
 
-        const display = new NotesView(notesModel);
-    
         display.displayNotes();
     
         expect(document.querySelectorAll('.note').length).toBe(2)
