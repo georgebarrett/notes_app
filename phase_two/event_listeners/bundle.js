@@ -15,6 +15,10 @@
         }
         displayMessage() {
           console.log("Thanks for clicking me!");
+          const messageElement = document.createElement("div");
+          messageElement.id = "message";
+          messageElement.innerText = "Breaking news!";
+          document.querySelector("#main-container").append(messageElement);
         }
       };
       module.exports = MessageView2;
