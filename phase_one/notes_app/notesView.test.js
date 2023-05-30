@@ -30,15 +30,15 @@ describe('page view', () => {
         document.body.innerHTML = fs.readFileSync('./index.html');
 
         const model = new NotesModel();
-        const view = new NotesView();
+        const view = new NotesView(model);
 
         const input = document.querySelector('#add-note-input');
-        input.value = 'NOTE'
+        input.value = 'NOTE';
 
         const button = document.querySelector('#add-note-btn');
         button.click();
 
-        expect(document.querySelectorAll('div.note').length).toEqual(1)
-        expect(document.querySelectorAll('div.note')[0].textContent).toEqual('NOTE')
+        expect(document.querySelectorAll('.note').length).toEqual(1)
+        expect(document.querySelectorAll('.note')[0].textContent).toEqual('NOTE')
     });
 })
