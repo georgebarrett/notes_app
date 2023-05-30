@@ -1,4 +1,5 @@
 const NotesModel = require('./notesModel');
+const NotesView = require('./notesView');
 
 const note = new NotesModel();
 
