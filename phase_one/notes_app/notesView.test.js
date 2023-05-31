@@ -56,6 +56,7 @@ describe('page view', () => {
 
         expect(document.querySelectorAll('.note').length).toEqual(1)
 
+        input.value = 'NOTE'
         button.click();
 
         expect(document.querySelectorAll('.note').length).toEqual(2)

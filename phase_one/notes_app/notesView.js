@@ -8,9 +8,11 @@ class NotesView {
 
         this.button.addEventListener('click', () => {
             let note = document.querySelector('#add-note-input')
-            model.addNote(note.value)
-            this.displayNotes();
-            model.deleteNotes();
+            if (note.value.length > 0) {
+                model.addNote(note.value)
+                this.displayNotes();
+                model.deleteNotes();
+            }
         })
     }
 
@@ -20,7 +22,7 @@ class NotesView {
             div.className = 'note';
             div.append(note);
             document.querySelector('#main-container').append(div); 
-            document.querySelector('#add-note-input').value = '';  
+            document.querySelector('#add-note-input').value = ''; 
         });
     }
 
