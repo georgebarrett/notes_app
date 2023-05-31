@@ -18,7 +18,8 @@ class NotesView {
             let div = document.createElement('div');
             div.className = 'note';
             div.append(note);
-            document.querySelector('#main-container').append(div);   
+            document.querySelector('#main-container').append(div); 
+            document.querySelector('#add-note-input').value = '';  
         });
     }
 
@@ -30,3 +31,4 @@ class NotesView {
 }
 
 module.exports = NotesView;
+
