@@ -42,7 +42,7 @@ describe('page view', () => {
         expect(document.querySelectorAll('.note')[0].textContent).toEqual('NOTE')
     });
 
-    it('prevents notes being added accumatively', () => {
+    it('adds multiple notes', () => {
         document.body.innerHTML = fs.readFileSync('./index.html');
 
         const model = new NotesModel();
