@@ -12,4 +12,4 @@ class GithubModel {
     }
   }
   
-  module.exports = GithubModel;
+module.exports = GithubModel;
