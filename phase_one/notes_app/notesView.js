@@ -10,6 +10,7 @@ class NotesView {
             let note = document.querySelector('#add-note-input')
             model.addNote(note.value)
             this.displayNotes();
+            model.deleteNotes();
         })
     }
 
