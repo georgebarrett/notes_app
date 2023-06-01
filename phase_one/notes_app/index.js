@@ -9,3 +9,5 @@ const client = new NotesClient();
 
 const view = new NotesView(model, client);
 // view.displayNotes();
+
+view.displayNotesFromApi();
