@@ -1,10 +1,12 @@
-const NotesModel = require("./notesModel");
+const NotesModel = require('./notesModel');
+const NotesClient = require('./notesClient');
 
 class NotesView {
 
-    constructor(model) {
+    constructor(model, client) {
         this.model = model;
-        this.button = document.querySelector('#add-note-btn')
+        this.client = client;
+        this.button = document.querySelector('#add-note-btn');
 
         this.button.addEventListener('click', () => {
             let note = document.querySelector('#add-note-input')
@@ -31,6 +33,13 @@ class NotesView {
         this.displayNotes();
     }
 
+    displayNotesFromApi(callback) {
+        this.client.loadNotes((noteData) => {
+            this.model.setNotes(noteData)
+            this.displayNotes()
+            callback()
+        });        
+    }
 }
 
 module.exports = NotesView;

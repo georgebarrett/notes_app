@@ -15,6 +15,12 @@ class NotesModel {
     deleteNotes() {
         this.notes = []
     }
+
+    setNotes(noteData) {
+        noteData.forEach((note) => {
+            this.notes.push(note)
+        });
+    }
 }
 
 module.exports = NotesModel
