@@ -5,5 +5,7 @@ const NotesClient = require('./notesClient');
 const model = new NotesModel();
 // model.addNote('practice cartwheels');
 
-const view = new NotesView(model);
+const client = new NotesClient();
+
+const view = new NotesView(model, client);
 // view.displayNotes();
