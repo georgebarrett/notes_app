@@ -32,4 +32,25 @@ describe('Client class', () => {
       done();
     });
   });
+
+  it('posts a new note to the database', () => {
+    const newNote = 'I AM A LIZARD'
+    const client = new NotesClient();
+    
+    const mockFetch = jest.fn();
+    global.fetch = mockFetch;
+
+    client.createNote(newNote)
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      'http://localhost:3000/notes',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify({content: newNote})
+      },
+    );
+  });
 });

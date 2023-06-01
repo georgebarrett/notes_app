@@ -8,6 +8,15 @@ class NotesClient {
         })
     }
 
+    createNote(newNote) {
+        return fetch('http://localhost:3000/notes', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({content: newNote})
+        });
+    }
 }
 
 module.exports = NotesClient;
